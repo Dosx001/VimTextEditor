@@ -1,0 +1,15 @@
+{
+    "manifest_version": 2,
+    "name": "VimTextEditor",
+    "version": "1.0",
+    "description": "Edit text with Vim keybindings.",
+    "icons": {
+        "48": "icons/border-48.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [ "<all_urls>" ],
+            "js": ["main.js"]
+        }
+    ]
+}
