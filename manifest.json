@@ -1,10 +1,13 @@
 {
     "manifest_version": 2,
-    "name": "VimTextEditor",
+    "name": "Vim Text Editor",
     "version": "1.0",
     "description": "Edit text with Vim keybindings.",
     "icons": {
-        "48": "icons/border-48.png"
+        "32": "icons/icon-32.png",
+        "48": "icons/icon-48.png",
+        "64": "icons/icon-64.png",
+        "128": "icons/icon-128.png"
     },
     "content_scripts": [
         {
