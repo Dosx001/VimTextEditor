@@ -21,26 +21,50 @@ document.querySelectorAll('input').forEach(ele => {
 })
 
 function vim(this: any, e: KeyboardEvent) {
-    e.preventDefault();
     let stl = document.getElementById('stl')!;
+    let keyEvent: KeyboardEvent;
     switch(e.key) {
         case "i":
+            e.preventDefault();
             stl.style.background = 'red';
             stl.innerHTML = '&nbsp;Insert&nbsp;';
             break;
         case "v":
+            e.preventDefault();
             stl.style.background = 'blue';
             stl.innerHTML = '&nbsp;Visual&nbsp;';
             break;
         case "r":
+            e.preventDefault();
             stl.style.background = 'orange';
             stl.innerHTML = '&nbsp;Replace&nbsp;';
             break;
         case "Alt":
+            e.preventDefault();
             if (e.ctrlKey) {
                 stl.style.background = 'green';
                 stl.innerHTML = '&nbsp;Normal&nbsp;';
             }
+            break;
+        case "h":
+            e.preventDefault();
+            keyEvent = new KeyboardEvent("keydown", {'key': 'ArrowLeft', 'keyCode': 37});
+            e.target!.dispatchEvent(keyEvent);
+            break;
+        case "k":
+            e.preventDefault();
+            keyEvent = new KeyboardEvent("keydown", {'key': 'ArrowUp', 'keyCode': 38});
+            e.target!.dispatchEvent(keyEvent);
+            break;
+        case "l":
+            e.preventDefault();
+            keyEvent = new KeyboardEvent("keydown", {'key': 'ArrowRight', 'keyCode': 39});
+            e.target!.dispatchEvent(keyEvent);
+            break;
+        case "j":
+            e.preventDefault();
+            keyEvent = new KeyboardEvent("keydown", {'key': 'ArrowDown', 'keyCode': 40});
+            e.target!.dispatchEvent(keyEvent);
             break;
         case "Escape":
             stl.remove();
